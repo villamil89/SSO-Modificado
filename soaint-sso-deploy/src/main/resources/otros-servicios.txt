@@ -1,0 +1,2 @@
+co.com.soaint.soadoc.sso.deploy.wrapper.CustomProviderFactory
+co.com.soaint.soadoc.sso.deploy.wrapper.GochezProviderFactory

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.autenticarda.sic/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AutenticarDAService" targetNamespace="http://ws.autenticarda.sic/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.autenticarda.sic/" elementFormDefault="unqualified" targetNamespace="http://ws.autenticarda.sic/" version="1.0">
+<xs:element name="autenticarDA" type="tns:autenticarDA"/>
+<xs:element name="autenticarDAResponse" type="tns:autenticarDAResponse"/>
+<xs:complexType name="autenticarDA">
+<xs:sequence>
+<xs:element minOccurs="0" name="trama" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="autenticarDAResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="autenticarDAResponse">
+    <wsdl:part element="tns:autenticarDAResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="autenticarDA">
+    <wsdl:part element="tns:autenticarDA" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AutenticarDA">
+    <wsdl:operation name="autenticarDA">
+      <wsdl:input message="tns:autenticarDA" name="autenticarDA">
+    </wsdl:input>
+      <wsdl:output message="tns:autenticarDAResponse" name="autenticarDAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutenticarDAServiceSoapBinding" type="tns:AutenticarDA">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="autenticarDA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="autenticarDA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="autenticarDAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutenticarDAService">
+    <wsdl:port binding="tns:AutenticarDAServiceSoapBinding" name="AutenticarDAPort">
+      <soap:address location="http://servicios.sic.gov.co/AutenticarDA/AutenticarDA"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
