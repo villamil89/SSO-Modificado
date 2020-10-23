@@ -67,4 +67,10 @@ public class SoaintCustomAuthentication implements SoaintCustomInterface {
 			return null;
 		}
 	}
+
+	@Override
+	public String[] getRolesByUserName(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

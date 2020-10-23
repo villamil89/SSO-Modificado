@@ -6,4 +6,5 @@ public interface SoaintCustomInterface {
 	
 	String[] getRoles();
 
+	String[] getRolesByUserName(String username);
 }

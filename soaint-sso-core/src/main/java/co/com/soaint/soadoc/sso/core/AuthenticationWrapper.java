@@ -11,11 +11,14 @@ public class AuthenticationWrapper {
 
 	public AuthenticationWrapper() {
 		soaintPropiedades = new SoaintPropiedades();
-		
 		staticUserManager = new StaticUserManager(soaintPropiedades.getProperties());
-
-		soaintCustomInterface = new SoaintCustomAuthentication();
-
+		String systemCall = soaintPropiedades.getProperties().getProperty("system-call");
+		
+		if (systemCall != null && systemCall.equalsIgnoreCase("true")) {
+			soaintCustomInterface = new SoaintCustomAuthenticationSystemCallerWrapper();
+		} else {
+			soaintCustomInterface = new SoaintCustomAuthentication();
+		}
 		nonstaticCommonGroup = soaintPropiedades.getProperties().getProperty("nonstatic-common-group").split(",");
 	}
 
