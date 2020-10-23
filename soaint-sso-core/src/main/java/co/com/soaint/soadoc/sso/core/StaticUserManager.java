@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import common.SimpleLogWrapping;
+import sic.autenticarda.common.SimpleLogWrapping;
 
 
 

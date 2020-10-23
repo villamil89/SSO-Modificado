@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import common.SimpleLogWrapping;
+import sic.autenticarda.common.SimpleLogWrapping;
 
 public class SoaintCustomAuthenticationSystemCaller {
 	

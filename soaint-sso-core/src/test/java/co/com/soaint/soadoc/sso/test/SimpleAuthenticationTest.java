@@ -1,8 +1,8 @@
 package co.com.soaint.soadoc.sso.test;
 
 import co.com.soaint.soadoc.sso.core.AuthenticationWrapper;
-import common.SimpleLogWrapping;
-import common.SoaintPropiedades;
+import sic.autenticarda.common.SimpleLogWrapping;
+import sic.autenticarda.common.SoaintPropiedades;
 
 public class SimpleAuthenticationTest {
 

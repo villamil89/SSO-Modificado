@@ -19,7 +19,7 @@ import org.keycloak.storage.StorageId;
 import org.keycloak.storage.UserStorageProvider;
 import org.keycloak.storage.user.UserLookupProvider;
 
-import common.SimpleLogWrapping;
+import sic.autenticarda.common.SimpleLogWrapping;
 
 
 

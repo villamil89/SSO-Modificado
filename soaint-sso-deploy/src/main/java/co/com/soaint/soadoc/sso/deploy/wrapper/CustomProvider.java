@@ -29,7 +29,7 @@ import org.keycloak.storage.user.UserQueryProvider;
 import org.keycloak.storage.user.UserRegistrationProvider;
 
 import co.com.soaint.soadoc.sso.core.AuthenticationWrapper;
-import common.SimpleLogWrapping;
+import sic.autenticarda.common.SimpleLogWrapping;
 
 public class CustomProvider
 

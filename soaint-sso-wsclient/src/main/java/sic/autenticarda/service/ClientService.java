@@ -10,8 +10,8 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 
-import common.SimpleLogWrapping;
-import common.SoaintPropiedades;
+import sic.autenticarda.common.SimpleLogWrapping;
+import sic.autenticarda.common.SoaintPropiedades;
 import sic.autenticarda.model.dto.HeaderDTO;
 import sic.autenticarda.model.dto.LoginDTO;
 import sic.autenticarda.model.dto.RequestDTO;
@@ -25,7 +25,7 @@ public class ClientService implements IClientService {
 
 	private SimpleLogWrapping log = new SimpleLogWrapping(this.getClass());
 
-	private static SoaintPropiedades propiedades;
+	private static SoaintPropiedades propiedades = new SoaintPropiedades();
 
 	@Override
 	public UserResponseDTO login(String username, String password) throws Exception {
@@ -33,12 +33,14 @@ public class ClientService implements IClientService {
 
 		try {
 			LoginDTO login = new LoginDTO();
-
+			
 			HeaderDTO header = new HeaderDTO();
+			log.info(" \n\n tokenApplication = " + propiedades.getPropiedad("tokenApplication"));
 			header.setApiToken(propiedades.getPropiedad("tokenApplication"));
 			login.setHeader(header);
 
 			RequestDTO rq = new RequestDTO();
+			log.info(" \n\n login" + username);
 			rq.setUsername(username);
 			rq.setPassword(password);
 			login.setBody(rq);

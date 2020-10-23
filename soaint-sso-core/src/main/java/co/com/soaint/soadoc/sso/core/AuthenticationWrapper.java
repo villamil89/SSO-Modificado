@@ -1,6 +1,6 @@
 package co.com.soaint.soadoc.sso.core;
 
-import common.SoaintPropiedades;
+import sic.autenticarda.common.SoaintPropiedades;
 
 public class AuthenticationWrapper {
 

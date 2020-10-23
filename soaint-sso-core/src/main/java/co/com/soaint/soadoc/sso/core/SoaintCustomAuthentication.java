@@ -4,9 +4,10 @@ import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import common.SimpleLogWrapping;
+import sic.autenticarda.common.SimpleLogWrapping;
 import sic.autenticarda.model.dto.RoleDTO;
 import sic.autenticarda.model.dto.UserResponseDTO;
+import sic.autenticarda.service.ClientService;
 import sic.autenticarda.service.IClientService;
 
 public class SoaintCustomAuthentication implements SoaintCustomInterface {
@@ -15,11 +16,11 @@ public class SoaintCustomAuthentication implements SoaintCustomInterface {
 
 	private SimpleLogWrapping log = new SimpleLogWrapping(this.getClass());
 
-	private IClientService service;
-
 	public boolean isValid(String username, String password) {
+		
+		IClientService service = new ClientService();
 		log.info("ejecutando validacion real de usuario : ", username);
-
+		
 		try {
 			response = service.login(username, password);
 
